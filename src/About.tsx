@@ -5,7 +5,7 @@ function About() {
         <p className="eyebrow">About</p>
         <h2>Professional advisory with a calm, client-first approach</h2>
         <p className="section-intro">
-          LegalTackleAdvisor is a trusted tax and legal support firm offering practical solutions for registrations, filings, audits, and compliance matters for individuals and businesses.
+          Legal Tackle Advisor is a trusted tax and legal support firm offering practical solutions for registrations, filings, audits, and compliance matters for individuals and businesses.
         </p>
       </div>
       <div className="about-split">

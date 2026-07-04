@@ -292,7 +292,7 @@ function App() {
 
       <footer className="footer">
         <div className="footer-bottom">
-          <p>&copy; 2026 LegalTackleAdvisor. We are a private advisory firm helping clients with tax, audit, DSC, ROC and compliance work.</p>
+          <p>&copy; 2026 Legal Tackle Advisor. We are a private advisory firm helping clients with tax, audit, DSC, ROC and compliance work.</p>
         </div>
       </footer>
 
