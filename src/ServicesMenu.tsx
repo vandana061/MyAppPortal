@@ -18,14 +18,18 @@ function ServicesMenu({ onNavigate }: ServicesMenuProps) {
   useEffect(() => {
     if (!open) return undefined;
 
-    const handleOutsideClick = (event: MouseEvent) => {
+    const handleOutsideClick = (event: Event) => {
       if (rootRef.current && !rootRef.current.contains(event.target as Node)) {
         setOpen(false);
       }
     };
 
     document.addEventListener('mousedown', handleOutsideClick);
-    return () => document.removeEventListener('mousedown', handleOutsideClick);
+    document.addEventListener('touchstart', handleOutsideClick);
+    return () => {
+      document.removeEventListener('mousedown', handleOutsideClick);
+      document.removeEventListener('touchstart', handleOutsideClick);
+    };
   }, [open]);
 
   const clearCloseTimeout = () => {
@@ -52,9 +56,20 @@ function ServicesMenu({ onNavigate }: ServicesMenuProps) {
     setOpen((prev) => !prev);
   };
 
-  const handleServiceClick = () => {
+  const handleServiceClick = (event: ReactMouseEvent<HTMLAnchorElement>) => {
+    event.preventDefault();
     setOpen(false);
     onNavigate?.();
+
+    // Wait for the menu/panel to actually collapse before scrolling, otherwise
+    // the page height shifts under the browser's scroll calculation (breaks on mobile).
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        const target = document.getElementById('services');
+        target?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        window.history.pushState(null, '', '#services');
+      });
+    });
   };
 
   return (
