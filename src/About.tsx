@@ -31,15 +31,7 @@ function About() {
             <div className="team">
               <div className="team-member">
                 <strong>Adv. Arun Sharma</strong>
-                <span>Senior Advocate</span>
-              </div>
-              <div className="team-member">
-                <strong>Adv. Vandana Sharma</strong>
-                <span>Advocate & Legal Advisor</span>
-              </div>
-              <div className="team-member">
-                <strong>CA Neelam Sharma</strong>
-                <span>Chartered Accountant</span>
+                <span>Co Founder</span>
               </div>
             </div>
           </div>
