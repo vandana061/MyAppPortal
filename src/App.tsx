@@ -2,6 +2,7 @@ import { useEffect, useState, type MouseEvent } from 'react';
 import Contact from './Contact';
 import About from './About';
 import Testimonials from './Testimonials';
+import ServicesMenu from './ServicesMenu';
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -136,7 +137,7 @@ function App() {
             </button>
             <nav className={`nav-links ${menuOpen ? 'nav-open' : ''}`}>
               <a href="#top" onClick={(event) => handleSectionClick(event, 'top')}>Home</a>
-              <a href="#services" onClick={(event) => handleSectionClick(event, 'services')}>Services</a>
+              <ServicesMenu onNavigate={() => setMenuOpen(false)} />
               <a href="#about" onClick={(event) => handleSectionClick(event, 'about')}>About</a>
               <a href="#contact" onClick={(event) => handleSectionClick(event, 'contact')}>Contact</a>
               <a href="#contact" className="nav-cta" onClick={(event) => handleSectionClick(event, 'contact')}>Book a consultation</a>

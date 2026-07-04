@@ -1201,3 +1201,114 @@ section[id] {
     padding: 60px 34px;
   }
 }
+/* Services mega menu */
+.services-menu {
+  position: relative;
+}
+
+.services-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #3d4a63;
+  font-weight: 500;
+  font-size: 1rem;
+  padding: 8px 14px;
+  border-bottom: 2px solid transparent;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.services-trigger:hover,
+.services-trigger.active-link {
+  color: #10192e;
+  border-bottom-color: #c9a227;
+}
+
+.services-chevron {
+  font-size: 0.7rem;
+  transition: transform 0.2s ease;
+}
+
+.services-chevron-open {
+  transform: rotate(180deg);
+}
+
+.mega-panel {
+  position: absolute;
+  top: calc(100% + 12px);
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(920px, 90vw);
+  background: #ffffff;
+  border: 1px solid rgba(201, 162, 39, 0.22);
+  border-radius: 10px;
+  box-shadow: 0 18px 40px rgba(16, 25, 46, 0.14);
+  padding: 24px 28px;
+  z-index: 130;
+}
+
+.mega-panel-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px 28px;
+}
+
+.mega-column-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #10192e;
+  margin: 0 0 10px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid rgba(201, 162, 39, 0.3);
+}
+
+.mega-column-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.mega-column-list a {
+  color: #3d4a63;
+  font-size: 0.88rem;
+  display: inline-block;
+}
+
+.mega-column-list a:hover {
+  color: #a8811a;
+}
+
+@media (max-width: 900px) {
+  .mega-panel-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 720px) {
+  .mega-panel {
+    position: static;
+    transform: none;
+    width: 100%;
+    box-shadow: none;
+    border: none;
+    margin-top: 6px;
+    padding: 12px 16px;
+  }
+
+  .mega-panel-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .services-trigger {
+    width: 100%;
+    justify-content: center;
+  }
+}
