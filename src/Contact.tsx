@@ -1,7 +1,6 @@
 import { useState } from 'react';
 
 function Contact() {
-  const mapAddress = encodeURIComponent('Opp Metro Pillar No. 564, Meerut Road, Ghaziabad, Uttar Pradesh, India');
   const [formData, setFormData] = useState({
     name: '',
     mobile: '',
@@ -128,9 +127,13 @@ function Contact() {
         <div className="map-card">
           <iframe
             title="Office Location"
-            src={`https://www.google.com/maps?q=${mapAddress}&output=embed`}
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3500.116599946096!2d77.42843807555369!3d28.686158481643268!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cf100548aa9db%3A0x533382b43615cc8b!2sLegal%20Tackle%20Advisor!5e0!3m2!1sen!2sin!4v1783186112099!5m2!1sen!2sin"
+            width="600"
+            height="450"
+            style={{ border: 0 }}
+            allowFullScreen
             loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
+            referrerPolicy="strict-origin-when-cross-origin"
           />
         </div>
       </div>
