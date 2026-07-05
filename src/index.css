@@ -1060,6 +1060,10 @@ section[id] {
 
   .nav-links.nav-open {
     display: flex;
+    max-height: calc(100vh - 80px);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
   }
 
   .nav-links a {
@@ -1300,6 +1304,10 @@ section[id] {
     border: none;
     margin-top: 6px;
     padding: 12px 16px;
+    max-height: 60vh;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
   }
 
   .mega-panel-grid {
