@@ -61,15 +61,17 @@ function ServicesMenu({ onNavigate }: ServicesMenuProps) {
     setOpen(false);
     onNavigate?.();
 
-    // Wait for the menu/panel to actually collapse before scrolling, otherwise
-    // the page height shifts under the browser's scroll calculation (breaks on mobile).
-    requestAnimationFrame(() => {
-      requestAnimationFrame(() => {
-        const target = document.getElementById('services');
-        target?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        window.history.pushState(null, '', '#services');
-      });
-    });
+    // On mobile, closing the hamburger nav + this mega-panel removes a lot of
+    // height at once. Waiting a beat lets that reflow/collapse fully finish
+    // before we measure and scroll, so we land on the right spot instead of
+    // scrolling relative to the stale (still-open) layout.
+    window.setTimeout(() => {
+      const target = document.getElementById('services');
+      if (!target) return;
+      const top = target.getBoundingClientRect().top + window.scrollY - 90;
+      window.scrollTo({ top, behavior: 'smooth' });
+      window.history.pushState(null, '', '#services');
+    }, 80);
   };
 
   return (
