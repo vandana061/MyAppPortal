@@ -109,7 +109,7 @@ function Contact() {
           <div className="contact-item social-item">
             <h3>Follow us</h3>
             <a
-              href="https://www.instagram.com/legaltackle?igsh=MW9jd3I5OTMwZXdtdg=="
+              href="https://www.instagram.com/legaltackle?igsh=MXYzc3FmcWswZnoxcw=="
               target="_blank"
               rel="noreferrer"
               className="social-link"
