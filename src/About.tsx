@@ -30,7 +30,7 @@ function About() {
             <h3>Our Team</h3>
             <div className="team">
               <div className="team-member">
-                <strong>Adv. Arun Sharma</strong>
+                <strong>Arun Sharma</strong>
                 <span>Co Founder</span>
                 <span>Arun Sharma is the Co-Founder of the firm with over 5 years of professional experience in the areas of Goods and Services Tax (GST), Direct and Indirect Taxation, Corporate Laws, Regulatory Compliance, and Business Advisory. He possesses in-depth expertise in advising businesses on statutory compliance, taxation matters, and legal and regulatory frameworks.
                        His core areas of practice include GST registration and return compliance, tax planning and advisory, ROC and company law compliances, business registrations, licensing, and obtaining various statutory certificates and approvals required under applicable laws. He has extensive experience in ensuring compliance with regulatory authorities and assisting clients in meeting their legal and procedural obligations efficiently.
